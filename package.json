@@ -1,6 +1,6 @@
 {
   "name": "@jswork/dns-resolver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DNS fast resolver.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -55,5 +55,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "node-fetch": "2.6.7"
-  }
+  },
+  "keywords": [
+    "dns",
+    "resolver"
+  ]
 }

@@ -5,6 +5,8 @@
 import fetch from 'node-fetch';
 import cheerio from 'cheerio';
 
+declare var wx: any;
+
 const dnsResolver = (inDomain) => {
   const domain = inDomain || 'github.github.io';
   const url = `https://tool.lu/dns/index.html`;

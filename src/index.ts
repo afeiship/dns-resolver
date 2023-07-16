@@ -3,7 +3,7 @@
 //   --data-raw 'host=github.github.io&type=a' \
 //   --compressed
 import fetch from 'node-fetch';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 
 declare var wx: any;
 

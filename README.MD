@@ -15,7 +15,11 @@ npm install @jswork/dns-resolver
 ```js
 import dnsResolver from '@jswork/dns-resolver';
 
-// usage goes here.
+const res = await dnsResolver('github.com');
+
+/**
+ * [{ type: 'A', ip: '20.205.243.166', ttl: '48' }]
+ */
 ```
 
 ## license

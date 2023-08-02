@@ -5,9 +5,22 @@
 import fetch from 'node-fetch';
 import * as cheerio from 'cheerio';
 
+interface DnsResolverResult {
+  type: string;
+  ip: string;
+  ttl: string;
+}
+interface DnsResolverOptions {
+  slim: boolean;
+}
+
 declare var wx: any;
 
-const dnsResolver = (inDomain) => {
+const dnsResolver = (
+  inDomain: string,
+  inOptions?: DnsResolverOptions
+): Promise<DnsResolverResult | DnsResolverResult[]> => {
+  const opts = inOptions || { slim: false };
   const domain = inDomain || 'github.github.io';
   const url = `https://tool.lu/dns/index.html`;
   const data = `host=${domain}&type=a`;
@@ -34,6 +47,8 @@ const dnsResolver = (inDomain) => {
         const ttl = ttlEl.text().trim();
         if (ip) result.push({ type, ip, ttl });
       });
+
+      if (opts.slim) return result[0];
       return result;
     });
 };

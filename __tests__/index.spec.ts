@@ -6,10 +6,14 @@ import dnsResolver from '../src';
 // 162.125.17.131        github.global.ssl.fastly.net
 
 describe('api.basic', () => {
-  test('normail single value case', async () => {
+  test('normail single value case with slim opts', async () => {
     // expect(fn({ rel: true })).toBe(undefined);
-    const res = await dnsResolver('github.com');
+    const res1 = await dnsResolver('github.com');
+    const res2 = await dnsResolver('github.com', { slim: true });
+
     // console.log('res: ', res);
-    expect(res.length).toBeGreaterThan(0);
+    expect(Array.isArray(res1)).toBe(true);
+    expect(res2).toHaveProperty('ip');
   });
+
 });

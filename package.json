@@ -1,6 +1,6 @@
 {
   "name": "@jswork/dns-resolver",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "DNS fast resolver.",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
